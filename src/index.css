@@ -24,7 +24,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 251, 251, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -41,7 +41,7 @@ body {
 }
 
 .logo h2 {
-    background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #13eb7f 0%, #10253e 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -126,7 +126,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #73f1c2 0%, #c3cfe2 100%);
     overflow: hidden;
 }
 
@@ -155,7 +155,7 @@ body {
 }
 
 .highlight {
-    background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #136d456f 0%, #0c0d0c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -429,7 +429,7 @@ body {
 /* How It Works Section */
 .how-it-works {
     padding: 100px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #90efc4 0%, #c3cfe2 100%);
     position: relative;
 }
 
@@ -650,7 +650,7 @@ body {
 /* Gallery Section */
 .gallery {
     padding: 60px 0;
-    background: #f8f9fa;
+    background: #f3faf9;
 }
 
 .gallery-grid {
@@ -1003,3 +1003,4 @@ a:focus {
     outline: 2px solid #00d4aa;
     outline-offset: 2px;
 }
+ 

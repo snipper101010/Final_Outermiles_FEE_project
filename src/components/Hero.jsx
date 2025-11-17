@@ -1,6 +1,9 @@
 
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
       <div className="hero-container">
@@ -10,19 +13,22 @@ export default function Hero() {
             <br />
             All in One Place
           </h1>
+
           <p className="hero-subtitle">
             From research and inspiration to the perfect route, accommodations,
             things to do and transportation - OuterMiles simplifies your entire
             travel planning process.
           </p>
+
           <div className="hero-actions">
             <button
               className="btn-hero-primary"
-              onclick="window.location.href='login.html'"
+              onClick={() => navigate("/signup")}
             >
               Start Planning
             </button>
           </div>
+
           <div className="hero-stats">
             <div className="stat">
               <span className="stat-number">50K+</span>
@@ -38,6 +44,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
         <div className="hero-visual">
           <div className="hero-image" />
           <div className="floating-cards">
@@ -56,12 +63,12 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
       <div className="hero-bg-elements">
         <div className="bg-circle bg-circle-1" />
         <div className="bg-circle bg-circle-2" />
         <div className="bg-circle bg-circle-3" />
       </div>
     </section>
-
   );
 }

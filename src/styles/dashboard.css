@@ -1,0 +1,600 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    color: #1a1a1a;
+}
+
+/* Navbar */
+.om-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.om-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.om-middle-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.om-middle-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+/* #00d4aa */
+/* #13c892 */
+
+.om-middle-button:hover{
+    color: #00d4aa;
+    border-bottom: 2px solid #00d4aa;
+}
+.om-middle-button-active {
+    color: #00d4aa;
+    border-bottom: 2px solid #00d4aa;
+}
+
+.om-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.om-invite {
+    font-size: 14px;
+    color: #00d4aa;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.om-add {
+    /* background-color: #00d4aa; */
+    background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 35px;
+}
+.om-join{
+    background-color: transparent;
+    color: #00d4aa;
+    padding: 10px 18px;
+    font-size: 14px;
+    border: 2px solid #00d4aa;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 35px;
+}
+
+.om-join:hover{
+    /* background-color: #0fb17f; */
+    background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+    border: none;
+    transform: scale(1.05);
+    color: #ffff;
+}
+
+.om-add:hover {
+    /* background-color: #0fb17f; */
+    transform: scale(1.05);
+}
+
+.om-container {
+    display: flex;
+    min-height: 92vh;
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+.om-aside-profile {
+    background-color: #f8f9fa;
+    min-width: 260px;
+    width: 260px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+}
+
+.om-profile-pic {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.om-profile {
+    width: 93%;
+    height: 93%;
+    border-radius: 50%;
+    object-fit: cover;  
+    transition: opacity 0.3s ease;
+}
+.om-profile:hover {
+    opacity: 0.6;
+}
+
+.om-name {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.om-username {
+    color: #9da7b6;
+    font-size: 14px;
+    
+}
+
+.om-sidebar-nav {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.om-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #374151;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.om-nav-item:hover {
+    background-color: #f0fdf9;
+    color: #00d4aa;
+}
+    
+.om-nav-item-active {
+    /* background-color: #f0fdf9;
+    color: #00d4aa; */
+    background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+    color: #fff;
+}
+.om-nav-item-active:hover{
+    color: #ffff;
+}
+
+/* Content */
+.om-content {
+    display: flex;
+    background: #f9fafb;
+    width: 100%;
+}
+
+.om-card {
+    flex: 1;
+    overflow: hidden;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.om-card1 {
+    max-width: 370px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.om-card h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #0F3E4A;
+}
+
+.om-card p {
+    color: #8a93a3;
+    font-size: 14px;
+}
+
+.om-first-trip-button {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.om-create-trip-popup {
+    display: none;
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+.om-create-trip-popup-new {
+    display: none;
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-container-join {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    
+      max-width: 300px;
+      margin: 50px auto;
+      padding: 25px;
+      display: flex;
+      gap: 20px;
+    }
+    .form-section-join {
+      flex: 1;
+    }
+
+/* .om-create-trip-popup-content {
+    background: #fff;
+    padding: 20px;
+    
+    margin: 15px auto;
+    border-radius: 8px;
+} */
+
+
+
+.form-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 25px;
+      display: flex;
+      gap: 20px;
+    }
+    .form-section {
+      flex: 1;
+    }
+    .btn-outline-success {
+      border-radius: 8px;
+    }
+    .btn-success {
+      border-radius: 8px;
+    }
+    #invite-onpopup{
+        border-color: #00d4aa;
+        color: #00d4aa;
+        background-color: #fff;
+        
+    }
+    .btn-group .btn {
+      border-radius: 8px !important;
+    }
+    #start-planning{
+        background-color: #00d4aa;
+        color: #fff;
+    }
+ html, body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; width: 100%; }
+    .container2{
+        height: 92%;
+        width: 100%;
+    }
+
+   .trip-card {
+  display: flex;
+  width: 22rem;
+}
+
+#trips-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+  width: 280px;              /* wider cards */
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  margin: 15px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0F3E4A;
+}
+.card-text {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.om-create-trip-popup-content {
+  background: #fff;
+  padding: 20px;
+  margin: 10px 10px;
+  border-radius: 12px;
+  height: 100%;
+}
+
+#trip-details-popup{
+    position: relative;
+    width:fit-content;
+}
+.om-create-trip-popup-content{
+    width: 30rem;
+}
+#trip-details-content button {
+  border-radius: 8px;
+}
+#logout-btn{
+    align-self: flex-start;
+    width: 180px;
+    color: rgb(255, 118, 118) ;
+}
+#logout-btn:hover{
+    background-color: rgb(255, 118, 118);
+    border-color:rgb(255, 118, 118) ;
+    color: #ffff; 
+}
+#delete-btn{
+    /* align-self: flex-start; */
+    /* width: 180px; */
+    color: rgb(255, 118, 118) ;
+}
+#delete-btn:hover{
+    background-color: rgb(255, 118, 118);
+    border-color:rgb(255, 118, 118) ;
+    color: #ffff; 
+}
+    
+
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+.friend-card img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.friend-card:hover {
+  background: linear-gradient(135deg, #00d4aa10 0%, #2c3e5010 100%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+
+
+
+
+/* ===== POPUP & FORM FALLBACK STYLES ===== */
+/* Ensure modal/backdrop layout for popups */
+.om-create-trip-popup,
+.om-create-trip-popup-new {
+  position: fixed;
+  z-index: 1050; /* above page content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* toggled by React inline style/display:block */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.35);
+  padding: 16px;
+}
+
+/* inner content box */
+.om-create-trip-popup-content,
+.form-container,
+.form-container-join {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  max-width: 920px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Smaller join popup */
+.form-container-join {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Layout of the form sections */
+.form-section, .form-section-join {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Fallback for .btn (Bootstrap-like) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #111827;
+  transition: all 0.18s ease;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+/* Primary/Success style used on Add */
+.btn-success, .om-add {
+  background: linear-gradient(135deg, #00d4aa 0%, #2c3e50 100%);
+  color: #fff;
+  border: none;
+}
+
+/* Outline danger */
+.btn-outline-danger {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+/* Secondary */
+.btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+}
+
+/* Danger for delete */
+.btn-danger, .btn-outline-danger:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* Fallback for bootstrap input/select */
+.form-control, .form-select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 0.95rem;
+}
+.form-control:focus, .form-select:focus {
+  border-color: #00d4aa;
+  box-shadow: 0 4px 12px rgba(0, 212, 170, 0.08);
+}
+
+/* btn-close fallback (Bootstrap 5 style) */
+.btn-close {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.btn-close::before, .btn-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  background: #374151;
+  transform-origin: center;
+}
+.btn-close::before { transform: translate(-50%, -50%) rotate(45deg); }
+.btn-close::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+/* Small responsive tweaks for popup content on mobile */
+@media (max-width: 720px) {
+  .om-create-trip-popup-content, .form-container { padding: 14px; border-radius: 10px; }
+  .om-aside-profile { display: none; } /* hide sidebar on small screens for space */
+}
+
+/* Friend card fallback */
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f8fafc;
+  margin-bottom: 8px;
+}
+
+/* Make sure cards inside trips container look ok */
+#trips-container .card {
+  width: 280px;
+  margin: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.08);
+}
+
+/* error/info popup text */
+#err-msg {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ensure .om-add (used often for gradient) looks consistent inside forms */
+.om-add {
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}

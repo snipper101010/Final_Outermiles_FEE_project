@@ -1,47 +1,28 @@
 import React, { useState } from "react";
 
-const countryImages = {
+const COUNTRY_IMAGES = {
   India: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05",
-  Uae: "https://images.unsplash.com/photo-1488646953014-85cb44e25828",
+  UAE: "https://images.unsplash.com/photo-1488646953014-85cb44e25828",
   France: "https://images.unsplash.com/photo-1418854982207-12f710b74003",
   Japan: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
 };
 
-export default function TripForm({ ownerId, onCreate, onClose }) {
-  const [name, setName] = useState("");
-  const [country, setCountry] = useState("India");
-  const [start, setStart] = useState("");
-  const [end, setEnd] = useState("");
-  const [error, setError] = useState("");
+export default function TripForm({ onClose, onSubmit }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    country: "India",
+    startDate: "",
+    endDate: "",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError("");
-
-    // Validation
-    if (!name || !country || !start || !end) {
-      setError("Please fill all fields");
-      return;
-    }
-
-    if (new Date(end) < new Date(start)) {
-      setError("End date must be after start date");
-      return;
-    }
-
     const newTrip = {
       id: Date.now(),
-      name,
-      country,
-      startdate: start,
-      enddate: end,
-      image: countryImages[country],
-      ownerId,
-      inviteCode: Math.random().toString(36).slice(2, 8),
+      ...formData,
+      image: COUNTRY_IMAGES[formData.country],
     };
-
-    console.log("Creating new trip:", newTrip); // Debug log
-    onCreate(newTrip);
+    onSubmit(newTrip);
   };
 
   return (
@@ -49,67 +30,50 @@ export default function TripForm({ ownerId, onCreate, onClose }) {
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <div className="form-section">
-            <div className="d-flex justify-content-between align-items-center mb-3">
+            <div className="d-flex justify-content-between mb-3">
               <h5>Create New Trip</h5>
               <button type="button" className="btn-close" onClick={onClose}></button>
             </div>
 
-            {error && (
-              <div className="alert alert-danger" role="alert">
-                {error}
-              </div>
-            )}
+            <input
+              type="text"
+              className="form-control mb-3"
+              placeholder="Trip name"
+              value={formData.name}
+              onChange={(e) => setFormData({...formData, name: e.target.value})}
+              required
+            />
 
-            <div className="mb-3">
-              <label className="form-label">Trip Name</label>
-              <input
-                type="text"
-                className="form-control"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Give your trip a name..."
-              />
-            </div>
+            <select
+              className="form-control mb-3"
+              value={formData.country}
+              onChange={(e) => setFormData({...formData, country: e.target.value})}
+            >
+              {Object.keys(COUNTRY_IMAGES).map(country => (
+                <option key={country} value={country}>{country}</option>
+              ))}
+            </select>
 
-            <div className="mb-3">
-              <label className="form-label">Destination</label>
-              <select
-                className="form-select"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                {Object.keys(countryImages).map((c) => (
-                  <option key={c} value={c}>{c}</option>
-                ))}
-              </select>
-            </div>
+            <input
+              type="date"
+              className="form-control mb-3"
+              value={formData.startDate}
+              onChange={(e) => setFormData({...formData, startDate: e.target.value})}
+              required
+            />
 
-            <div className="mb-3">
-              <label className="form-label">Start Date</label>
-              <input
-                type="date"
-                className="form-control"
-                value={start}
-                onChange={(e) => setStart(e.target.value)}
-              />
-            </div>
+            <input
+              type="date"
+              className="form-control mb-3"
+              value={formData.endDate}
+              onChange={(e) => setFormData({...formData, endDate: e.target.value})}
+              min={formData.startDate}
+              required
+            />
 
-            <div className="mb-3">
-              <label className="form-label">End Date</label>
-              <input
-                type="date"
-                className="form-control"
-                value={end}
-                onChange={(e) => setEnd(e.target.value)}
-                min={start}
-              />
-            </div>
-
-            <div className="d-grid gap-2">
-              <button type="submit" className="om-add">
-                Create Trip
-              </button>
-            </div>
+            <button type="submit" className="om-add w-100">
+              Create Trip
+            </button>
           </div>
         </form>
       </div>
