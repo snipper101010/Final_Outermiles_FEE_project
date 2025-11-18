@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Cloud, Droplets, Wind, Gauge, Plane } from 'lucide-react';
+
+import { Cloud, Droplets, Wind, Plane, Gauge } from "lucide-react";
+
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import './weather-styles.css';
-import Header from "../components/Header";
+
 
 
 const WeatherDashboard = () => {
